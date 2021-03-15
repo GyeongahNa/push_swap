@@ -29,16 +29,22 @@ void	free_argv(char **argv)
 int		check_input_form(int argc, char *str)
 {
 	int	i;
+	int	is_space;
 
 	i = 0;
+	is_space = 0;
 	if (argc != 2)
 		return (0);
 	while (str[i] != '\0')
 	{
 		if ((str[i] < '0' || str[i] > '9') && str[i] != '-' && str[i] != ' ')
 			return (0);
+		if (str[i] == ' ')
+			is_space = 1;
 		i++;
 	}
+	if (is_space == 0)
+		return (0);
 	return (1);
 }
 
