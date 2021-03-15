@@ -87,12 +87,11 @@ int		main(int argc, char **argv)
 	}
 	if (check_input(&a, argv, argc, i) == 0)
 		return (0);
-	//argc++;
 	cmd = NULL;
 	if (check_descending(a, b) == 1)
 		return (0);
-	if (check_little_number(i, ++argc - 1, argv))
+	if (check_little_number(i, argc, argv))
 		return (0);
-	push_swap(&cmd, argc - 1, a, b);
+	push_swap(&cmd, argc, a, b);
 	print_total_command(cmd);
 }
