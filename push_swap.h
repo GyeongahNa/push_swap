@@ -65,5 +65,7 @@ int		get_chunk(int n);
 int		get_argv_size(char **argv);
 int		get_smallest_val(t_list *lst);
 int		get_largest_val(t_list *lst);
+void	iter_command(
+		t_list **command, void (*f)(t_list**), t_list **lst, int num);
 
 #endif
