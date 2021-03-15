@@ -67,5 +67,9 @@ int		get_smallest_val(t_list *lst);
 int		get_largest_val(t_list *lst);
 void	iter_command(
 		t_list **command, void (*f)(t_list**), t_list **lst, int num);
+int    get_first_idx(int *arr);
+int    get_second_idx(int *arr);
+int    get_third_idx(int *arr);
+int    get_fourth_idx(int *arr);
 
 #endif
