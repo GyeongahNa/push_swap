@@ -6,7 +6,7 @@
 /*   By: gna <gna@student.42Seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:07:20 by gna               #+#    #+#             */
-/*   Updated: 2021/03/15 14:08:23 by gna              ###   ########.fr       */
+/*   Updated: 2021/03/16 01:09:12 by gna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ int		get_smallest_val(t_list *lst);
 int		get_largest_val(t_list *lst);
 void	iter_command(
 		t_list **command, void (*f)(t_list**), t_list **lst, int num);
-int    get_first_idx(int *arr);
-int    get_second_idx(int *arr);
-int    get_third_idx(int *arr);
-int    get_fourth_idx(int *arr);
+int		get_first_idx(int *arr);
+int		get_second_idx(int *arr);
+int		get_third_idx(int *arr);
+int		get_fourth_idx(int *arr);
 
 #endif

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_five.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gna <gna@stuent.42seoul.kr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 01:12:57 by gna               #+#    #+#             */
+/*   Updated: 2021/03/16 01:15:14 by gna              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void first_case(int *arr, int t_idx, int s_idx, int f_idx)
+void	first_case(int *arr, int t_idx, int s_idx, int f_idx)
 {
 	if (arr[0] < arr[t_idx])
 	{
@@ -17,9 +29,9 @@ void first_case(int *arr, int t_idx, int s_idx, int f_idx)
 	}
 }
 
-void second_case(int *arr, int t_idx, int s_idx, int f_idx)
+void	second_case(int *arr, int t_idx, int s_idx, int f_idx)
 {
-    if (arr[0] > arr[t_idx] && arr[0] < arr[s_idx])
+	if (arr[0] > arr[t_idx] && arr[0] < arr[s_idx])
 	{
 		if (arr[1] < arr[t_idx])
 			ft_puts("pa\nra\nra\npa\nrra\nrra\n");
@@ -32,12 +44,11 @@ void second_case(int *arr, int t_idx, int s_idx, int f_idx)
 		else if (arr[1] > arr[0] && arr[1] < arr[s_idx])
 			ft_puts("ra\npa\npa\nrra\n");
 	}
-
 }
 
-void third_case(int *arr, int t_idx, int s_idx, int f_idx)
+void	third_case(int *arr, int t_idx, int s_idx, int f_idx)
 {
-    if (arr[0] > arr[s_idx] && arr[0] < arr[f_idx])
+	if (arr[0] > arr[s_idx] && arr[0] < arr[f_idx])
 	{
 		if (arr[1] < arr[t_idx])
 			ft_puts("pa\nrra\npa\nra\nra\n");
@@ -50,12 +61,11 @@ void third_case(int *arr, int t_idx, int s_idx, int f_idx)
 		else if (arr[1] > arr[0] && arr[1] < arr[f_idx])
 			ft_puts("rra\npa\npa\nrra\nrra\n");
 	}
-
 }
 
-void fourth_case(int *arr, int t_idx, int s_idx, int f_idx)
+void	fourth_case(int *arr, int t_idx, int s_idx, int f_idx)
 {
-    if (arr[0] > arr[f_idx])
+	if (arr[0] > arr[f_idx])
 	{
 		if (arr[1] < arr[t_idx])
 			ft_puts("pa\npa\nra\n");
@@ -70,7 +80,7 @@ void fourth_case(int *arr, int t_idx, int s_idx, int f_idx)
 	}
 }
 
-int	check_five(int *arr)
+int		check_five(int *arr)
 {
 	int f_idx;
 	int s_idx;
@@ -81,9 +91,9 @@ int	check_five(int *arr)
 	t_idx = get_third_idx(arr);
 	ft_puts("pb\npb\n");
 	check_three(arr, 2, 3, 4);
-    first_case(arr, t_idx, s_idx, f_idx);
-    second_case(arr, t_idx, s_idx, f_idx);
-    third_case(arr, t_idx, s_idx, f_idx);
-    fourth_case(arr, t_idx, s_idx, f_idx);
+	first_case(arr, t_idx, s_idx, f_idx);
+	second_case(arr, t_idx, s_idx, f_idx);
+	third_case(arr, t_idx, s_idx, f_idx);
+	fourth_case(arr, t_idx, s_idx, f_idx);
 	return (1);
 }
