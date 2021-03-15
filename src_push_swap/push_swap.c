@@ -108,25 +108,22 @@ int		cal_interval(int chunk_num, t_list *a)
 void	push_swap(t_list **command, int list_num, t_list *a, t_list *b)
 {
 	int	i;
-	int	start;
-	int	end;
 	int	top;
-	int chunk_num;
 	int	smallest;
 	int	interval;
 
 	i = 0;
-	chunk_num = get_chunk(list_num);
 	smallest = get_smallest_val(a);
-	interval = cal_interval(chunk_num, a);
-	while (i <= chunk_num)
+	interval = cal_interval(get_chunk(list_num), a);
+	while (i <= get_chunk(list_num))
 	{
-		start = smallest + interval * i;
-		end = smallest + interval * (i + 1) - 1;
-		while (check_chunk(a, start, end) != -1)
+		while (check_chunk(a, smallest + interval * i, 
+		smallest + interval * (i + 1) - 1) != -1)
 		{
 			top = set_top(
-			command, &a, find_first(a, start, end), find_last(a, start, end));
+			command, &a, find_first(a, smallest + interval * i,
+			smallest + interval * (i + 1) - 1), find_last(
+			a, smallest + interval * i, smallest + interval * (i + 1) - 1));
 			sort_before_add_new(command, &b, top);
 			pb(&a, &b);
 			ft_lstadd_back(command, ft_lstnew(PB));
